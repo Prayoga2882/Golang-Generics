@@ -13,6 +13,6 @@ func length[T a](param T) T {
 }
 
 func TestTypeParameter(t *testing.T) {
-	length("hello")
-	length(1)
+	result := length[string]("Hello")
+	fmt.Println(result)
 }
