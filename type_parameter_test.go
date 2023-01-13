@@ -16,3 +16,12 @@ func TestTypeParameter(t *testing.T) {
 	result := length[string]("Hello")
 	fmt.Println(result)
 }
+
+func MultipleTypeParams(T a, U a) {
+	fmt.Println(T, U)
+}
+
+func TestMultipleTypeParams(t *testing.T) {
+	MultipleTypeParams("Hello", 1)
+	MultipleTypeParams(1, "Hello")
+}
