@@ -6,8 +6,10 @@ import (
 )
 
 type Number interface {
-	int | float64 | float32 | int8 | int16 | int32 | int64 | uint8 | uint16 | uint32 | uint64
+	~int | float64 | float32 | int8 | int16 | int32 | int64 | uint8 | uint16 | uint32 | uint64
 }
+
+type Age int
 
 func Min[T Number](a, b T) T {
 	if a < b {
@@ -20,4 +22,5 @@ func TestMin(t *testing.T) {
 	assert.Equal(t, 100, Min[int](100, 200))
 	assert.Equal(t, 100.0, Min[float64](100.0, 200.0))
 	assert.Equal(t, 100.0, Min[float32](100.0, 200.0))
+	assert.Equal(t, Age(100), Min[Age](100, 200))
 }
